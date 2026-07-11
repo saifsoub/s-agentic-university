@@ -1,0 +1,19 @@
+{
+  "name": "agent-worker-deploy",
+  "displayName": "Agent Worker Deploy",
+  "version": "1.0.0",
+  "description": "Subagent for packaging, configuring, and deploying agent workers safely.",
+  "author": {
+    "name": "s-agentic-university"
+  },
+  "license": "MIT",
+  "keywords": [
+    "agent",
+    "worker",
+    "deploy",
+    "ops",
+    "cloud-agent"
+  ],
+  "agents": "./agents/",
+  "commands": "./commands/"
+}
