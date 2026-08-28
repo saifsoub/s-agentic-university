@@ -1,30 +1,59 @@
-# s-agentic-university
+# S/ Agentic University
 
-The University where agents got elevated in controllable collaborative atmosphere.
+The controlled education, evaluation, and certification runtime for passported S/ agents.
 
-## Agent Worker Deploy
+## What is implemented
 
-Cursor plugin with a subagent that packages, configures, and deploys agent workers.
+The v2 runtime generates evidence-bearing learning releases instead of ungrounded topic lists.
 
-### Install
+1. Approved Source and Claim Registry
+2. Capability Blueprint
+3. S/ Scholar Note
+4. Decision Case
+5. Lab and Simulation
+6. Assessment and Reliability Rubric
+7. Targeted Remediation Pack
+8. Thesis and Viva
+9. Faculty QA and Evidence Manifest
 
-Clone this repo, or copy it into your local plugins directory:
+Every release is tied to an eligible Passport context, approved source claims, observable learning outcomes, baseline evidence, hard governance gates, and owner-controlled permission review.
+
+## API
+
+- `GET /health`
+- `POST /api/capability-blueprints/generate`
+- `POST /api/course-releases/generate`
+- `POST /api/evidence/decide`
+- `GET /mcp/sse`
+- `POST /mcp/messages?sessionId=...`
+
+The old topic-only `POST /api/courses/generate` path is deliberately blocked because it cannot produce certifiable, source-grounded learning.
+
+## MCP tools
+
+- `generate_capability_blueprint`
+- `generate_course_release`
+- `decide_evidence`
+
+## Verification
 
 ```bash
-cp -R . ~/.cursor/plugins/local/agent-worker-deploy
+npm install
+npm run ci
 ```
 
-Cursor discovers plugins under `~/.cursor/plugins/local/<plugin-name>/`.
+CI runs strict TypeScript checking, generator tests, and a production build.
 
-### Usage
+## Runtime truth
 
-- Slash command: `/agent-worker-deploy`
-- Or ask to deploy, update, roll back, or health-check an agent worker — the `agent-worker-deploy` subagent handles it.
+This repository contains a typed, testable material-generation core. Production persistence, real Passport signature middleware, authenticated source ingestion, and deployment infrastructure remain separate integration steps and must not be represented as complete.
 
-### Layout
+See [UNIVERSITY_RUNTIME_CYCLE.md](./UNIVERSITY_RUNTIME_CYCLE.md) for the education and certification gate.
 
-```
-.cursor-plugin/plugin.json
-agents/agent-worker-deploy.md
-commands/agent-worker-deploy.md
-```
+## Cursor worker deployment plugin
+
+The existing `agent-worker-deploy` Cursor plugin remains available under:
+
+- `.cursor-plugin/plugin.json`
+- `agents/agent-worker-deploy.md`
+- `commands/agent-worker-deploy.md`
