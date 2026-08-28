@@ -239,7 +239,7 @@ A Campus Run moves through these states:
 
 Exceptional state:
 
-- CURRICULUM_LATE records a missed curriculum-freeze deadline while retaining the last academic state and all unmet gates. It never converts to PASS.
+- CURRICULUM_LATE records a missed curriculum-freeze deadline while retaining the last academic state and all unmet gates. It is a recovery wrapper, not an academic gate result. When work resumes, the run returns to lastAcademicState with deadlineOutcome=LATE. After all gates pass it may enter CURRICULUM_FROZEN with the persistent late outcome, but it never retroactively becomes ON_TIME or satisfies the inaugural deadline acceptance criterion.
 
 Failure transitions:
 
@@ -262,6 +262,7 @@ No state may be skipped.
 
 | State completed | Required decision | Reviewer | Minimum evidence |
 |---|---|---|---|
+| INTAKE | Run initialized | Dean | owner ID, schedule, existing Linear anchors, active Worker Registry |
 | PASSPORT_ENROLLMENT | Enrollment PASS | Passport Office | passport ID, status, owner binding, authority boundary |
 | SOURCE_LOCK | Source PASS | Source Curator | source inventory, approved claims, provenance and freshness |
 | CURRICULUM_BUILD | Curriculum PASS | Curriculum Architect | outcomes, prerequisites, map, capstone contract |
@@ -270,11 +271,13 @@ No state may be skipped.
 | INDEPENDENT_QA | QA PASS | Independent QA Examiner | alignment, provenance, leakage, accessibility, privacy, bias |
 | REGISTRAR_REVIEW | Registrar PASS or REMEDIATION_REQUIRED | Registrar | baseline, attempts, lab, exam, reliability, delta, QA |
 | CURRICULUM_FROZEN | Freeze PASS | Release Manager | academic hash and complete pre-freeze output set |
+| POLISH | Polish submitted | Release Manager | complete PolishChangeSet limited to allowed fields; transition target is POLISH_VERIFICATION |
 | POLISH_VERIFICATION | Polish PASS | Release Manager | allowed-field diff and unchanged academic hash |
 | PASSPORT_HANDOFF_READINESS | Handoff PASS | Passport Office | Registrar PASS, QA PASS, owner-bound request |
 | LAUNCH_READY | Packet PASS | Release Manager | final manifest and launch-readiness packet |
 | MARKETING_SCHEDULING | Date received | Marketing Liaison | Marketing Team response and proposed date |
 | OWNER_APPROVAL | APPROVE or RETURN | Seif | proposed date, readiness packet, unresolved notes |
+| SCHEDULED | Schedule recorded | Release Manager | owner approval, Marketing-proposed date, Marketing acknowledgement; CLOSED requires LaunchExecutionReceipt or owner-approved cancellation |
 
 ## 8. Deadline policy and clock
 
@@ -502,7 +505,9 @@ Every external write uses an OutboxEvent with:
 - status
 - lastError
 
-Campus state commits before external mirroring. Failed mirrors become PENDING_SYNC and retry with the same idempotency key. External mirrors never overwrite Campus runtime state. Conflicts are recorded as SYNC_CONFLICT and routed to the Dean; they are not resolved by last-write-wins.
+The Campus domain event and every derived OutboxEvent are persisted in the same atomic CampusStore transaction. For FileCampusStore, the transaction is one checksummed write-ahead envelope committed through temporary-file write, sync, and atomic rename before reduction. Crash recovery ignores incomplete envelopes and rebuilds both run state and pending outbox work from committed envelopes.
+
+Campus state commits before external delivery. Failed mirrors become PENDING_SYNC and retry with the same idempotency key. External mirrors never overwrite Campus runtime state. Conflicts are recorded as SYNC_CONFLICT and routed to the Dean; they are not resolved by last-write-wins.
 
 ## 13. APIs and MCP tools
 
@@ -640,6 +645,8 @@ Required tests:
 - only Seif's owner actor approves launch
 - append-only history preserves prior attempts
 - restart recovers run, leases, idempotency, and outbox state
+- a crash between mutation and delivery cannot lose the atomically persisted OutboxEvent
+- incomplete file-store transaction envelopes are ignored during recovery
 - failed external mirror becomes PENDING_SYNC without rolling back Campus state
 - Linear adapter cannot create issues, projects, dashboards, or checklists
 - no Campus UI routes or assets are introduced
@@ -683,7 +690,7 @@ The Campus is implementation-complete for the inaugural local run when:
 - a run can be created, persisted, restarted, and queried
 - authenticated Workers can be dispatched, claim, heartbeat, submit, return, and re-submit artifacts
 - illegal role actions and state transitions are rejected
-- the eleven-item academic set reaches CURRICULUM_FROZEN no later than the configured deadline or truthfully records CURRICULUM_LATE
+- the eleven-item academic set reaches CURRICULUM_FROZEN no later than the configured deadline; CURRICULUM_LATE is a truthful failed operational outcome and does not satisfy inaugural-run completion
 - tomorrow's polish cannot alter the academic hash
 - a launch-readiness packet can be generated and handed to the existing Marketing Team
 - only the Marketing Liaison can record the Team's proposed date
