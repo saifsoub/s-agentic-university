@@ -65,3 +65,9 @@ test('S_A_U-REASONING_001-The_S_Way preserves its registered identity and author
   assert.ok(content.includes('By: `Dr.GPT-5.6_Sol`'));
   assert.ok(content.includes('Designation: `The S/Thinking_&_Brainstorming_Partner`'));
 });
+
+
+test('program manifest registers the canonical curriculum identity exactly once', async () => {
+  const content = await readFile(new URL('../curriculum/visioning/README.md', import.meta.url), 'utf8');
+  assert.equal(content.split('Registered curriculum identity: `S_A_U-REASONING_001-The_S_Way`').length - 1, 1);
+});
