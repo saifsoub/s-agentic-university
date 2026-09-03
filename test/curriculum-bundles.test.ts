@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
-const courseIds = ['VT-101', 'VT-102', 'VT-103', 'VT-201'];
+const courseIds = ['S_A_U-REASONING_001-The_S_Way', 'VT-102', 'VT-103', 'VT-201'];
 const requiredSections = [
   '## Capability outcome',
   '## Observable learning outcomes',
@@ -56,4 +56,12 @@ test('QA report records zero unresolved curriculum gaps while preserving the enr
   assert.match(content, /Duplicate course IDs: 0/);
   assert.match(content, /Unresolved filler markers: 0/);
   assert.match(content, /Passport roster contains zero records/);
+});
+
+
+test('S_A_U-REASONING_001-The_S_Way preserves its registered identity and authorship', async () => {
+  const content = await readFile(new URL('../curriculum/visioning/S_A_U-REASONING_001-The_S_Way.md', import.meta.url), 'utf8');
+  assert.ok(content.includes('Curriculum ID: `S_A_U-REASONING_001-The_S_Way`'));
+  assert.ok(content.includes('By: `Dr.GPT-5.6_Sol`'));
+  assert.ok(content.includes('Designation: `The S/Thinking_&_Brainstorming_Partner`'));
 });
