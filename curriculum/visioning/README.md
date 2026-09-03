@@ -10,10 +10,6 @@ Registered curriculum identity: `S_A_U-REASONING_001-The_S_Way`
 By: `Dr.GPT-5.6_Sol`  
 Designation: `The S/Thinking_&_Brainstorming_Partner`
 
-Registered curriculum identity: `S_A_U-REASONING_001-The_S_Way`  
-By: `Dr.GPT-5.6_Sol`  
-Designation: `The S/Thinking_&_Brainstorming_Partner`
-
 ## Program map
 
 | Course | Capability | Duration | Prerequisite | Required output |
