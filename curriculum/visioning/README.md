@@ -6,18 +6,26 @@ Authoring worker passport: `/root/university_curriculum`
 
 Status: `FACULTY_QA_READY` — the curriculum is complete and versioned; learner enrollment, assessment results, certification, and Passport activation remain separate evidence-gated actions.
 
+Registered curriculum identity: `S_A_U-REASONING_001-The_S_Way`  
+By: `Dr.GPT-5.6_Sol`  
+Designation: `The S/Thinking_&_Brainstorming_Partner`
+
+Registered curriculum identity: `S_A_U-REASONING_001-The_S_Way`  
+By: `Dr.GPT-5.6_Sol`  
+Designation: `The S/Thinking_&_Brainstorming_Partner`
+
 ## Program map
 
 | Course | Capability | Duration | Prerequisite | Required output |
 |---|---|---:|---|---|
-| [VT-101](./VT-101.md) | Horizon scanning and evidence discipline | 6 hours | None | Traceable signal portfolio |
-| [VT-102](./VT-102.md) | Drivers, systems, and uncertainty | 6 hours | VT-101 | Driver system and uncertainty map |
-| [VT-103](./VT-103.md) | Scenario construction and implications | 8 hours | VT-101, VT-102 | Four plausible scenarios with implications |
+| [S_A_U-REASONING_001-The_S_Way](./S_A_U-REASONING_001-The_S_Way.md) | Horizon scanning and evidence discipline | 6 hours | None | Traceable signal portfolio |
+| [VT-102](./VT-102.md) | Drivers, systems, and uncertainty | 6 hours | S_A_U-REASONING_001-The_S_Way | Driver system and uncertainty map |
+| [VT-103](./VT-103.md) | Scenario construction and implications | 8 hours | S_A_U-REASONING_001-The_S_Way, VT-102 | Four plausible scenarios with implications |
 | [VT-201](./VT-201.md) | Strategy stress-testing and backcasting | 8 hours | VT-103 | Robust action portfolio and roadmap |
 
 ## Openable release bundles
 
-- [VT-101 release bundle](./releases/VT-101-RELEASE.md)
+- [S_A_U-REASONING_001-The_S_Way release bundle](./releases/S_A_U-REASONING_001-The_S_Way-RELEASE.md)
 - [VT-102 release bundle](./releases/VT-102-RELEASE.md)
 - [VT-103 release bundle](./releases/VT-103-RELEASE.md)
 - [VT-201 release bundle](./releases/VT-201-RELEASE.md)

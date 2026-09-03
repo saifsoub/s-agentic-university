@@ -1,13 +1,17 @@
-# VT-101 — Horizon Scanning and Evidence Discipline
+# S_A_U-REASONING_001-The_S_Way — Horizon Scanning and Evidence Discipline
 
-- Release: `VT-101-2026.09-R1`
+- Curriculum ID: `S_A_U-REASONING_001-The_S_Way`
+- By: `Dr.GPT-5.6_Sol`
+- Designation: `The S/Thinking_&_Brainstorming_Partner`
+
+- Release: `S_A_U-REASONING_001-The_S_Way-2026.09-R1`
 - Authoring worker passport: `/root/university_curriculum`
 - Level: Foundation
 - Duration: 6 hours
 - Prerequisite: None
 - Status: `FACULTY_QA_READY`
 - Source claims: `GOS-FT-2024-01`, `GOS-RES-2024-02`, `UNDP-FM-2018-01`
-- Generated materials: [VT-101 release bundle](./releases/VT-101-RELEASE.md)
+- Generated materials: [S_A_U-REASONING_001-The_S_Way release bundle](./releases/S_A_U-REASONING_001-The_S_Way-RELEASE.md)
 
 ## Capability outcome
 

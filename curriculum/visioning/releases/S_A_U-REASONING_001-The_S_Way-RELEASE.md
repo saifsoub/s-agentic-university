@@ -1,7 +1,11 @@
-# VT-101 Generated Release Bundle
+# S_A_U-REASONING_001-The_S_Way Generated Release Bundle
 
-- Release ID: `VT-101-2026.09-R1`
-- Blueprint: [VT-101](../VT-101.md)
+- Curriculum ID: `S_A_U-REASONING_001-The_S_Way`
+- By: `Dr.GPT-5.6_Sol`
+- Designation: `The S/Thinking_&_Brainstorming_Partner`
+
+- Release ID: `S_A_U-REASONING_001-The_S_Way-2026.09-R1`
+- Blueprint: [S_A_U-REASONING_001-The_S_Way](../S_A_U-REASONING_001-The_S_Way.md)
 - Authoring worker passport: `/root/university_curriculum`
 - Release state: `FACULTY_QA_READY`
 
