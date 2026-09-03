@@ -3,7 +3,7 @@
 - QA release: `VT-QA-2026.09-R1`
 - Build worker passport: `/root/university_curriculum`
 - Curriculum release: `VT-CURRICULUM-2026.09-R1`
-- Scope: VT-101, VT-102, VT-103, VT-201 and their generated release bundles
+- Scope: S_A_U-REASONING_001-The_S_Way, VT-102, VT-103, VT-201 and their generated release bundles
 - Decision: `FACULTY_QA_READY`
 
 ## Gate results
@@ -12,7 +12,7 @@
 |---|---|---|
 | Complete pathway map | PASS | Program manifest links all four sequenced courses |
 | Observable capability per course | PASS | Capability outcome and measurable outcomes in every blueprint |
-| Prerequisites and progression | PASS | None → VT-101 → VT-102 → VT-103 → VT-201 |
+| Prerequisites and progression | PASS | None → S_A_U-REASONING_001-The_S_Way → VT-102 → VT-103 → VT-201 |
 | Source grounding | PASS | Approved source IDs and open official URLs in manifest |
 | Scholar note | PASS | One substantive note per release bundle |
 | Decision case | PASS | One decision-forcing case per release bundle |
