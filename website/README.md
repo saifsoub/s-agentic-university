@@ -1,13 +1,15 @@
 # S/Agentic University website prototype
 
-Source imported from the owner-provided OKComputer_S_Agentic_University archive. This is the React/Vite front end corresponding to the public Kimi preview at https://hdbmlg6savxqe.kimi.page. The Kimi publication remains separately hosted; this folder is not connected to an automatic deployment.
+This React/Vite source was imported from the owner-provided archive. The Kimi preview at https://hdbmlg6savxqe.kimi.page is hosted separately and is **not** automatically updated by changes here. The complete website in this repository has not been deployed.
 
 ## Local development
 
-Requires Node.js 20 or newer. Run `npm ci`, `npm run dev`, and `npm run build` from this directory.
+Use Node.js 20 or newer. In this directory, run `npm ci`, `npm run dev`, and `npm run build`.
 
-## Current limits
+## Public claims and interest intake
 
-The interest form posts to the `public.university_interest` table in the S/Agency Supabase project for the proposed Spring 2027 cohort. The public key is publishable, and database row security permits anonymous inserts but does not allow anonymous reads. The form collects only name, email, optional phone, area of interest, and contact consent. A successful registration is an expression of interest, not an admission, enrollment, or confirmed semester date. There is no confirmation email or staff notification yet; staff must review registrations securely in Supabase. Public forms need active spam monitoring.
+This site describes an emerging learning initiative and proposed Spring 2027 cohort. Learning areas are proposals. An expression of interest does not create an application, seat, admission, or enrollment. S/Passport is planned as a prerequisite to later enrollment; its process and any fees have yet to be confirmed. The site's registration links point to the separately published [verified interest intake](https://s-agentic-university-interest-2027.s-user-002.chatgpt.site).
 
-The separately hosted Kimi preview is not updated by commits to this repository. Do not advertise its old browser-only Apply form as active registration. The browser-only admin page and embedded password in the supplied archive were excluded. Website claims about faculty, research, degrees, cohorts, tuition, scholarships, and outcomes require owner review before public use.
+The original archive contained invented or unverified faculty, accreditation, campus, partnerships, publications, graduate outcomes, tuition, scholarships, and admissions dates; these were removed from public facing routes in this review. Reintroduce a claim only with owner-approved evidence and real personnel permission. The supplied browser-only admin page and embedded password were already excluded during import. The old Kimi preview may still contain legacy copy and a browser-local Apply form; do not advertise its old form as an active registration route.
+
+The interest intake stores submissions in `public.university_interest` in S/Agency Supabase. Database row security permits anonymous inserts and does not allow anonymous reads. Contact notifications and spam monitoring need operational ownership; do not promise automatic confirmations.
