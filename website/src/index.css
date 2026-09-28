@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn variables */
+    --background: 240 33% 9%;
+    --foreground: 40 33% 96%;
+    --card: 240 66% 23%;
+    --card-foreground: 40 33% 96%;
+    --popover: 240 33% 9%;
+    --popover-foreground: 40 33% 96%;
+    --primary: 41 90% 61%;
+    --primary-foreground: 240 33% 9%;
+    --secondary: 240 66% 23%;
+    --secondary-foreground: 40 33% 96%;
+    --muted: 240 66% 23%;
+    --muted-foreground: 40 33% 76%;
+    --accent: 41 90% 61%;
+    --accent-foreground: 240 33% 9%;
+    --destructive: 0 100% 27%;
+    --destructive-foreground: 40 33% 96%;
+    --border: 240 66% 23%;
+    --input: 240 66% 23%;
+    --ring: 41 90% 61%;
+    --radius: 0.5rem;
+    --sidebar-background: 240 33% 9%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 41 90% 61%;
+    --sidebar-primary-foreground: 240 33% 9%;
+    --sidebar-accent: 240 66% 23%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 240 66% 23%;
+    --sidebar-ring: 41 90% 61%;
+
+    /* Custom Design Tokens */
+    --deep-indigo: #080828;
+    --midnight-blue: #12125a;
+    --institutional-gold: #f5b041;
+    --warm-amber: #e67e22;
+    --crimson-accent: #8b0000;
+    --parchment: #f9f6f0;
+    --gold-rust: #b8860b;
+    --text-primary: #f9f6f0;
+    --text-muted: rgba(249, 246, 240, 0.5);
+    --text-accent: #f5b041;
+    --text-shadow: 0px 0px 12px rgba(245, 176, 65, 0.5);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: var(--deep-indigo);
+    color: var(--text-primary);
+    font-family: "Libre Caslon Text", "Times New Roman", serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -1.68px;
+    line-height: 1.1;
+  }
+
+  h4 {
+    font-family: "Libre Caslon Text", "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -0.96px;
+    line-height: 1.2;
+  }
+
+  h5 {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  h6 {
+    font-family: "JetBrains Mono", Menlo, monospace;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: var(--text-shadow);
+  }
+
+  .text-shadow-readability {
+    text-shadow: 0 2px 24px rgba(8, 8, 40, 0.8);
+  }
+
+  .bg-gold-glow {
+    background: radial-gradient(ellipse at center, rgba(245, 176, 65, 0.15) 0%, transparent 70%);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+@keyframes scroll-dot {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(6px); }
+}

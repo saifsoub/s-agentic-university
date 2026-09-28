@@ -2,6 +2,11 @@
 
 The controlled education, evaluation, and certification runtime for passported S/ agents.
 
+## Website and preserved prototype
+
+- [`website/`](./website/) contains the source of the S/Agentic University Kimi website [preview](https://hdbmlg6savxqe.kimi.page). It is a front-end prototype; this repository does not deploy that preview automatically. The browser-only admin password supplied in the archive was excluded, and the admissions form is local to each browser.
+- [`integrations/cloudflare-agent/`](./integrations/cloudflare-agent/) preserves the separate experimental Cloudflare Agent from the former `sagentic-university` repository. It does not verify Passport signatures and is not a production authorization gateway.
+
 ## What is implemented
 
 The v2 runtime generates evidence-bearing learning releases instead of ungrounded topic lists.

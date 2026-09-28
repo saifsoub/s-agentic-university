@@ -1,0 +1,17 @@
+{
+  "name": "sagentic-university-cloudflare-agent",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:temporary": "wrangler deploy --temporary"
+  },
+  "dependencies": {
+    "agents": "latest"
+  },
+  "devDependencies": {
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}
