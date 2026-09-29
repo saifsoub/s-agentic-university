@@ -51,7 +51,7 @@ export default function NotFound() {
             lineHeight: 1.7,
           }}
         >
-          The page you're looking for doesn't exist in our campus.
+          The page you're looking for doesn't exist.
         </p>
 
         {/* Buttons */}
@@ -71,7 +71,7 @@ export default function NotFound() {
               e.currentTarget.style.backgroundColor = '#f5b041'
             }}
           >
-            Return to Campus
+            Return to home
           </Link>
 
           <Link
