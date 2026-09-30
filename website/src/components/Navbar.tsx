@@ -53,7 +53,7 @@ export default function Navbar() {
             <span
               className="font-sans font-bold text-[#f9f6f0] tracking-[0.1em] text-sm md:text-base"
             >
-              S/AGENTIC
+              AGENTIC
             </span>
             <span
               className="font-sans font-medium text-[rgba(249,246,240,0.5)] tracking-[0.14em] text-[0.6rem]"
