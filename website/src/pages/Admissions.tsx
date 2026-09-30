@@ -43,7 +43,7 @@ const preferredItems = [
 
 const faqData = [
   {
-    q: "What makes S/Agentic University different from a traditional CS master's program?",
+    q: "What makes Agentic University different from a traditional CS master's program?",
     a: "Our curriculum is exclusively focused on autonomous agent systems. Every course, lab, and project builds expertise in designing, deploying, and governing intelligent agents. You'll graduate with both deep theoretical knowledge and hands-on experience building production agent systems.",
   },
   {
