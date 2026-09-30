@@ -74,7 +74,7 @@ const toolDefinitions = [
   },
   {
     name: 'generate_course_release',
-    description: 'Generate the complete S/ Case-Lab-Viva material bundle from an approved blueprint and source registry.',
+    description: 'Generate the complete Case-Lab-Viva material bundle from an approved blueprint and source registry.',
     inputSchema: { type: 'object', required: ['courseTitle', 'blueprint', 'sourceClaims'] },
   },
   {
