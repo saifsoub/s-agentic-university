@@ -47,7 +47,7 @@ const request: CapabilityBlueprintRequest = {
   ],
 };
 
-test('generates the complete nine-artifact S/ release', () => {
+test('generates the complete nine-artifact release', () => {
   const blueprint = generateCapabilityBlueprint(request);
   const release = generateCourseRelease({
     courseTitle: 'S/U Strategic Visioning',
