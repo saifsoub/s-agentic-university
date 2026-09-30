@@ -109,7 +109,7 @@ export function generateScholarNote(
 ): MaterialArtifact {
   return artifact(
     'scholar_note',
-    'S/ Scholar Note',
+    'Scholar Note',
     'Provide the minimum source-grounded theory required for performance.',
     outcomes,
     sourceClaimIds,
