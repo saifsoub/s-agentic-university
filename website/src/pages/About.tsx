@@ -59,7 +59,7 @@ const milestones = [
   {
     year: '2024',
     title: 'The Institute',
-    description: 'S/Agentic University formally established as an independent graduate institution. Accreditation secured.',
+    description: 'Agentic University formally established as an independent graduate institution. Accreditation secured.',
   },
   {
     year: '2025',
@@ -100,7 +100,7 @@ const leaders = [
   {
     name: 'Seif Alsoub',
     role: 'Founder & Chancellor',
-    bio: 'Visionary founder of S/Agentic University. A pioneer in autonomous agent systems and AI education, Seif established the institution to create a new generation of agent architects.',
+    bio: 'Visionary founder of Agentic University. A pioneer in autonomous agent systems and AI education, the founder established the institution to create a new generation of agent architects.',
     image: '/faculty-portrait-1.jpg',
   },
   {
