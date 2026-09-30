@@ -98,7 +98,7 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-[rgba(249,246,240,0.1)]">
           <p className="font-mono text-xs text-[rgba(249,246,240,0.5)] mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} S/Agentic University. Seif Alsoub. All rights reserved.
+            &copy; {new Date().getFullYear()} Agentic University. Seif Alsoub. All rights reserved.
           </p>
 
           {/* Social icons */}
