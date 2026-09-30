@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# Test and tooling caches
+coverage/
+.nyc_output/
+.eslintcache
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# Secrets â€” never commit real values
+.env
+.env.*
+!.env.example
