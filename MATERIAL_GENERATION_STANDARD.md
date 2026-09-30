@@ -1,6 +1,6 @@
-# S/ Material Generation Standard
+# Material Generation Standard
 
-This repository implements the Case-Lab-Viva architecture coordinated in the S/ Agent University Linear project.
+This repository implements the Case-Lab-Viva architecture coordinated in the Agent University Linear project.
 
 ## Invariant
 
