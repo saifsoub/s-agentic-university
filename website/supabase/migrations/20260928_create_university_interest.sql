@@ -1,4 +1,4 @@
--- Applied in the S/Agency Supabase project for the planned Spring 2027 interest cohort.
+-- Applied in the Agency Supabase project for the planned Spring 2027 interest cohort.
 create table if not exists public.university_interest (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
