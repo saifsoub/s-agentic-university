@@ -8,7 +8,7 @@ Status: `FACULTY_QA_READY` — the curriculum is complete and versioned; learner
 
 Registered curriculum identity: `S_A_U-REASONING_001-The_S_Way`  
 By: `Dr.GPT-5.6_Sol`  
-Designation: `The S/Thinking_&_Brainstorming_Partner`
+Designation: `The Thinking_&_Brainstorming_Partner`
 
 ## Program map
 
