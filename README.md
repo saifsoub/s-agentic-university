@@ -1,16 +1,16 @@
-# S/ Agentic University
+# Agentic University
 
-The controlled education, evaluation, and certification runtime for passported S/ agents.
+The controlled education, evaluation, and certification runtime for passported agents.
 
 
 ## One canonical University source
 
-`saifsoub/s-agentic-university` is the sole source for University code, content and future changes. Kimi owns the University website and live experience. The former `saifsoub/sagentic-university` repository is superseded and must not receive a parallel launch or deployment. Its unmerged SAG-116 work is preserved in [the historical consolidation record](docs/history/SAG-116-legacy-pr-preservation.md). Current website corrections continue through PR #12 in this repository; source consolidation does not itself publish the Kimi website. S/Passport remains the planned enrollment prerequisite.
+`saifsoub/s-agentic-university` is the sole source for University code, content and future changes. Kimi owns the University website and live experience. The former `saifsoub/sagentic-university` repository is superseded and must not receive a parallel launch or deployment. Its unmerged SAG-116 work is preserved in [the historical consolidation record](docs/history/SAG-116-legacy-pr-preservation.md). Current website corrections continue through PR #12 in this repository; source consolidation does not itself publish the Kimi website. An agent passport remains the planned enrollment prerequisite.
 
 ## Website and preserved prototype
 
-- [`website/`](./website/) contains the source of the S/Agentic University Kimi website [preview](https://hdbmlg6savxqe.kimi.page). It is a front-end prototype; this repository does not deploy that preview automatically. The browser-only admin password supplied in the archive was excluded. The replacement interest form posts to Supabase, but the Kimi preview still serves its earlier browser-only admissions page. Unverified claims on the imported pages must be corrected before publishing the full website.
-- [Spring 2027 interest registration](https://s-agentic-university-interest-2027.s-user-002.chatgpt.site) is the separate public intake page, deployed from [`intake/index.html`](./intake/index.html). It accepts expressions of interest only; no enrollment, admission, or confirmed semester date is promised. Anonymous clients may insert into `public.university_interest` in the S/Agency Supabase project but cannot read rows.
+- [`website/`](./website/) contains the source of the Agentic University Kimi website [preview](https://hdbmlg6savxqe.kimi.page). It is a front-end prototype; this repository does not deploy that preview automatically. The browser-only admin password supplied in the archive was excluded. The replacement interest form posts to Supabase, but the Kimi preview still serves its earlier browser-only admissions page. Unverified claims on the imported pages must be corrected before publishing the full website.
+- [Spring 2027 interest registration](https://s-agentic-university-interest-2027.s-user-002.chatgpt.site) is the separate public intake page, deployed from [`intake/index.html`](./intake/index.html). It accepts expressions of interest only; no enrollment, admission, or confirmed semester date is promised. Anonymous clients may insert into `public.university_interest` in the project's Supabase instance but cannot read rows.
 - [`integrations/cloudflare-agent/`](./integrations/cloudflare-agent/) preserves the separate experimental Cloudflare Agent from the former `sagentic-university` repository. It does not verify Passport signatures and is not a production authorization gateway.
 
 ## What is implemented
@@ -19,7 +19,7 @@ The v2 runtime generates evidence-bearing learning releases instead of ungrounde
 
 1. Approved Source and Claim Registry
 2. Capability Blueprint
-3. S/ Scholar Note
+3. Scholar Note
 4. Decision Case
 5. Lab and Simulation
 6. Assessment and Reliability Rubric
