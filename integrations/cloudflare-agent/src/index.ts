@@ -53,7 +53,7 @@ export class UniversityAgent extends Agent<Env, UniversityState> {
   @callable()
   attachPassport(passport: Passport) {
     if (!passport?.passport_id?.startsWith("S-PASS-")) {
-      throw new Error("Invalid S/ Agent Passport id");
+      throw new Error("Invalid Agent Passport id");
     }
     if (passport.status !== "active") {
       throw new Error("Passport must be active");
@@ -122,14 +122,14 @@ export default {
     if (url.pathname === "/health") {
       return Response.json({
         ok: true,
-        service: "S/Agentic University Agent",
+        service: "Agentic University Agent",
         runtime: "Cloudflare Agents SDK",
       });
     }
 
     return (
       routeAgentRequest(request, env) ??
-      new Response("S/Agentic University Agent", { status: 200 })
+      new Response("Agentic University Agent", { status: 200 })
     );
   },
 };
