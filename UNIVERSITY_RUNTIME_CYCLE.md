@@ -1,7 +1,7 @@
-# S/ University Runtime Cycle
+# University Runtime Cycle
 
 ## Purpose
-Operate the S/ University as the education and certification gate for passported S/ Agency workers.
+Operate the University as the education and certification gate for passported Agency workers.
 
 ## First cohort
 Visioning Team.
@@ -26,7 +26,7 @@ Visioning Team.
 - Instructor — conducts targeted teaching and practical coaching
 - Assessment Designer — builds role-specific exams and labs
 - QA & Performance Evaluator — independently scores quality, performance delta, evidence completeness, and confidence
-- Registrar / Passport Handoff — records certification and sends activation eligibility to S/ Agent Passport
+- Registrar / Passport Handoff — records certification and sends activation eligibility to Agent Passport
 
 ## Required worker evidence
 Every worker record must include:
@@ -73,10 +73,10 @@ The execution package is three-layered:
 - GitHub: implementation, schemas, versioned education runtime contract and technical evidence.
 - Linear: canonical execution and closure record for University work.
 - monday.com: live operational orchestration where permissions allow.
-- S/ Agent Passport: identity, status, capabilities and final activation gate.
+- Agent Passport: identity, status, capabilities and final activation gate.
 
 ## Current execution state — 2026-08-26
 - Visioning Team selected as first cohort.
 - Linear SAG-56 promoted to In Progress and expanded as the execution anchor.
 - monday.com Education Orchestrator agent created, activated and first run enqueued.
-- monday.com board `S/ University — Active Runtime` discovered, but connector write permissions currently block item/column creation; this must not be interpreted as an education-cycle failure.
+- monday.com board `University — Active Runtime` discovered, but connector write permissions currently block item/column creation; this must not be interpreted as an education-cycle failure.
