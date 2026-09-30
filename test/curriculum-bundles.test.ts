@@ -63,7 +63,7 @@ test('S_A_U-REASONING_001-The_S_Way preserves its registered identity and author
   const content = await readFile(new URL('../curriculum/visioning/S_A_U-REASONING_001-The_S_Way.md', import.meta.url), 'utf8');
   assert.ok(content.includes('Curriculum ID: `S_A_U-REASONING_001-The_S_Way`'));
   assert.ok(content.includes('By: `Dr.GPT-5.6_Sol`'));
-  assert.ok(content.includes('Designation: `The S/Thinking_&_Brainstorming_Partner`'));
+  assert.ok(content.includes('Designation: `The Thinking_&_Brainstorming_Partner`'));
 });
 
 
