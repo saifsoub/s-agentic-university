@@ -2,7 +2,7 @@
 
 - Curriculum ID: `S_A_U-REASONING_001-The_S_Way`
 - By: `Dr.GPT-5.6_Sol`
-- Designation: `The S/Thinking_&_Brainstorming_Partner`
+- Designation: `The Thinking_&_Brainstorming_Partner`
 
 - Release: `S_A_U-REASONING_001-The_S_Way-2026.09-R1`
 - Authoring worker passport: `/root/university_curriculum`
