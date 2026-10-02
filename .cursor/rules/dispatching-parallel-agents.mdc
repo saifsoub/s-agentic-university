@@ -1,0 +1,61 @@
+---
+description: Dispatch one agent per independent problem domain and run them in parallel
+alwaysApply: true
+---
+
+# Dispatching parallel agents
+
+When you have multiple unrelated failures or subsystems, investigate them in parallel. One agent per independent domain.
+
+## When to use
+
+Use parallel dispatch when:
+- 3+ test files fail with different root causes
+- Multiple subsystems are broken independently
+- Each problem can be understood without context from the others
+- Agents will not edit the same files or share mutable state
+
+Do not use when:
+- Fixing one failure likely fixes the others
+- You still need the full system picture before splitting work
+- Agents would interfere (same files, same resources, shared locks)
+
+## Pattern
+
+1. Group failures by domain (file, subsystem, or bug class).
+2. Give each agent a focused, self-contained prompt: scope, goal, constraints, expected return.
+3. Dispatch all independent agents in one turn so they run concurrently.
+4. Review summaries, check for conflicting edits, then run the full suite.
+
+## Agent prompt requirements
+
+Each prompt must include:
+- Specific scope (one test file or subsystem)
+- Clear goal (e.g. make these tests pass)
+- Hard constraints (e.g. do not change production code)
+- Expected output (root cause + what changed)
+
+```markdown
+Fix the 3 failing tests in src/agents/agent-tool-abort.test.ts:
+
+1. "should abort tool with partial output capture"
+2. "should handle mixed completed and aborted tools"
+3. "should properly track pendingToolCount"
+
+Find the real issue (timing vs bug). Do not just increase timeouts.
+Return: root cause and what you fixed.
+```
+
+## Mistakes to avoid
+
+- Too broad: "Fix all the tests"
+- No context: missing error messages and test names
+- No constraints: agent refactors unrelated code
+- Vague output: "Fix it" with no summary requirement
+
+## After agents return
+
+1. Read each summary.
+2. Diff for overlapping edits.
+3. Run the full test suite.
+4. Spot-check for systematic mistakes (blanket timeout bumps, silenced assertions).
