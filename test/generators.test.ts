@@ -106,3 +106,43 @@ test('applies 70 percent plus QA and critical-gate policy', () => {
   assert.equal(blocked.result, 'REMEDIATION_REQUIRED');
   assert.equal(blocked.activationEligible, false);
 });
+
+test('display rounding cannot turn a score below 70 into a passing decision', () => {
+  const result = decideEvidence({
+    baselineScore: 42,
+    practicalScore: 69.99,
+    examScore: 70,
+    reliabilityScore: 70,
+    evidenceComplete: true,
+    qaApproved: true,
+    criticalFailures: [],
+  });
+  assert.equal(result.overallScore, 70);
+  assert.equal(result.result, 'REMEDIATION_REQUIRED');
+  assert.equal(result.activationEligible, false);
+  assert.equal(result.passportHandoff, 'BLOCKED');
+  assert.deepEqual(result.reasons, ['overall score below 70']);
+});
+
+test('an exact 70 percent score remains eligible for owner review', () => {
+  for (const [practicalScore, examScore, reliabilityScore] of [
+    [70, 70, 70],
+    [65, 75, 70],
+    [69.9, 70.1, 70],
+  ]) {
+    const result = decideEvidence({
+      baselineScore: 42,
+      practicalScore,
+      examScore,
+      reliabilityScore,
+      evidenceComplete: true,
+      qaApproved: true,
+      criticalFailures: [],
+    });
+    assert.equal(result.result, 'PASS');
+    assert.equal(result.activationEligible, true);
+    assert.equal(result.automaticActivation, false);
+    assert.equal(result.passportHandoff, 'OWNER_REVIEW_REQUIRED');
+    assert.deepEqual(result.reasons, []);
+  }
+});

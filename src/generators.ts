@@ -335,14 +335,16 @@ export function generateCourseRelease(input: CourseReleaseRequest): CourseReleas
 }
 
 export function decideEvidence(input: EvidenceDecisionInput) {
-  const overallScore = Number((
+  const weightedScore =
     input.practicalScore * 0.4 +
     input.examScore * 0.4 +
-    input.reliabilityScore * 0.2
-  ).toFixed(2));
+    input.reliabilityScore * 0.2;
+  // Rounding is for display only; it must not elevate a failing score.
+  const overallScore = Number(weightedScore.toFixed(2));
+  const meetsScoreThreshold = weightedScore >= 70;
   const delta = Number((overallScore - input.baselineScore).toFixed(2));
   const passed =
-    overallScore >= 70 &&
+    meetsScoreThreshold &&
     input.evidenceComplete &&
     input.qaApproved &&
     input.criticalFailures.length === 0;
@@ -355,7 +357,7 @@ export function decideEvidence(input: EvidenceDecisionInput) {
     automaticActivation: false,
     passportHandoff: passed ? 'OWNER_REVIEW_REQUIRED' : 'BLOCKED',
     reasons: [
-      ...(overallScore < 70 ? ['overall score below 70'] : []),
+      ...(!meetsScoreThreshold ? ['overall score below 70'] : []),
       ...(!input.evidenceComplete ? ['evidence incomplete'] : []),
       ...(!input.qaApproved ? ['independent QA not approved'] : []),
       ...input.criticalFailures.map((failure) => 'critical failure: ' + failure),
