@@ -14,7 +14,7 @@ const disciplines = [
   {
     num: '01',
     title: 'Agent Architecture',
-    desc: 'Design the cognitive scaffolding of autonomous agents.',
+    desc: 'Design how AI agents plan and make decisions.',
     topics: ['Cognitive Architecture', 'Perception Systems', 'Action Spaces', 'World Models'],
   },
   {
@@ -32,7 +32,7 @@ const disciplines = [
   {
     num: '04',
     title: 'Tool Use & APIs',
-    desc: 'Equip agents with external capabilities.',
+    desc: 'Connect agents to tools.',
     topics: ['Function Calling', 'API Integration', 'Browser Automation', 'Code Execution'],
   },
   {
@@ -628,7 +628,7 @@ export default function Programs() {
             className="cta-animate font-['Cormorant_Garamond'] text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.1] text-[#f9f6f0] mb-6"
             style={{ letterSpacing: '-1.68px' }}
           >
-            Shape the Future of Agentic AI
+            Build the future of AI agents
           </h2>
           <p className="cta-animate font-['Libre_Caslon_Text'] text-[clamp(0.875rem,1.2vw,1.0625rem)] leading-[1.7] text-[rgba(249,246,240,0.5)] mb-10">
             Applications for the September 2026 cohort are now open. Join a
@@ -656,3 +656,5 @@ export default function Programs() {
     </div>
   );
 }
+
+

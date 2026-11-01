@@ -194,7 +194,7 @@ export default function Faculty() {
             className="hero-animate font-['Cormorant_Garamond'] text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-[1.05] text-[#f9f6f0] mb-6"
             style={{ letterSpacing: '-1.68px' }}
           >
-            Minds Shaping the Agentic Revolution
+            Meet the faculty
           </h1>
           <p
             className="hero-animate font-['Libre_Caslon_Text'] text-[clamp(0.875rem,1.2vw,1.125rem)] leading-[1.7] text-[rgba(249,246,240,0.5)] max-w-[600px]"
@@ -346,3 +346,4 @@ export default function Faculty() {
     </div>
   );
 }
+

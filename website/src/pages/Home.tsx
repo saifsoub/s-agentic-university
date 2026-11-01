@@ -350,7 +350,7 @@ function PillarsSection() {
           PILLARS OF LEARNING
         </h6>
         <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] text-[#f9f6f0] mb-16 max-w-[600px]">
-          Three Pillars of Agentic Mastery
+          Three areas of study
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
@@ -385,7 +385,7 @@ const programs = [
   {
     title: 'Agent Architecture',
     description:
-      'Design and implement autonomous agent frameworks from first principles. Explore cognitive architectures, perception-action loops, and meta-cognitive control structures.',
+      'Learn how to build AI agents that plan, use tools, and respond to results.',
   },
   {
     title: 'Multi-Agent Systems',
@@ -897,3 +897,5 @@ export default function Home() {
     </>
   );
 }
+
+

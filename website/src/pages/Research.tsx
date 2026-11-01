@@ -18,7 +18,7 @@ const labs = [
     image: '/lab-computer-vision.jpg',
   },
   {
-    name: 'The Orchestration Lab',
+    name: 'The AI Teamwork Lab',
     director: 'Prof. James Chen',
     description:
       'Designing protocols and algorithms for multi-agent collaboration, consensus, and emergent collective intelligence.',
@@ -37,7 +37,7 @@ const researchAreas = [
   {
     title: 'Foundation Models for Agents',
     description:
-      'Extending LLMs and VLMs with tool use, planning, and persistent memory capabilities.',
+      'Helping AI models use tools, plan, and remember useful information.',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f5b041" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -101,7 +101,7 @@ const researchAreas = [
     ),
   },
   {
-    title: 'Evaluating Agent Capabilities',
+    title: 'Understanding agent skills',
     description:
       'Benchmarks, red-teaming methodologies, and capability assessment frameworks.',
     icon: (
@@ -275,7 +275,7 @@ export default function Research() {
             className="research-header-h1 font-['Cormorant_Garamond'] font-semibold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] tracking-[-1.68px] text-[#f9f6f0] mb-5"
             style={{ textShadow: '0 2px 24px rgba(8, 8, 40, 0.8)' }}
           >
-            Pushing the Boundaries of Agentic AI
+            Research into AI agents
           </h1>
           <p
             className="research-header-body font-['Libre_Caslon_Text'] text-[clamp(0.875rem,1.2vw,1.125rem)] leading-[1.7] tracking-[0.2px] text-[rgba(249,246,240,0.5)] max-w-[600px]"
@@ -496,3 +496,5 @@ export default function Research() {
     </div>
   );
 }
+
+
