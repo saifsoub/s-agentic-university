@@ -1,0 +1,62 @@
+---
+description: Build with the Cursor SDK (TypeScript @cursor/sdk or Python cursor-sdk)
+globs: "**/*.{ts,tsx,js,jsx,mjs,cjs,py}"
+alwaysApply: false
+---
+
+# Cursor SDK
+
+Use this rule when integrating `@cursor/sdk` (TypeScript) or `cursor-sdk` / `cursor_sdk` (Python). Both share Agent → Run across local and cloud runtimes.
+
+## Language
+
+1. Honor an explicit package or import name.
+2. Otherwise follow the repo (`package.json` → TS, `pyproject.toml` / `requirements.txt` → Python).
+3. If still unclear, ask once: TypeScript or Python?
+
+## Invocation patterns (pick one)
+
+**One-shot:** `Agent.prompt(...)` for fire-and-forget scripts and CI steps.
+
+**Durable + follow-ups:** `Agent.create(...)` then `agent.send(...)` for streaming, multi-turn, cancel, or status.
+
+**Resume later:** `Agent.resume(id, ...)` across process boundaries. Runtime is inferred from the ID (`bc-` = cloud). Re-pass inline MCP servers on resume; they are not persisted.
+
+## Top traps
+
+1. **Runtime.** Always set `local` or `cloud` explicitly. Omitting both silently selects local.
+2. **Two failure kinds.** Thrown `CursorAgentError` = never started (auth/config/network). `result.status === "error"` / `== "error"` = run started and failed. Different exit codes and fixes.
+3. **Dispose.** TypeScript: `await using agent = ...`. Python: `with Agent.create(...) as agent:`. `Agent.prompt` disposes for you.
+4. **Always `wait()`.** Stream is optional observation; `wait()` is required for the terminal result and to avoid leaking watchers.
+5. **Capability checks.** Detached/rehydrated runs may lack cancel/conversation. Guard with `run.supports(...)`.
+
+## Auth and model
+
+```bash
+export CURSOR_API_KEY="cursor_..."
+```
+
+Pass `apiKey` / `api_key` explicitly in shared infrastructure. Model is required for local; pass one for cloud too. Prefer `composer-2.5` or `Cursor.models.list()` / `Cursor.models.list` for valid IDs. Do not hardcode unusual model IDs without confirming access.
+
+## Local vs cloud
+
+- **Local:** caller's machine, `cwd`, reuses local env/credentials.
+- **Cloud:** Cursor VM, cloned repo; use for long jobs and `autoCreatePR` / `auto_create_pr`.
+
+## Production checklist
+
+- Dispose every agent handle.
+- Exit 1 on startup `CursorAgentError`, exit 2 on run `error`, exit 0 only on `finished`.
+- Log `run.id` and `agent.agentId` / `agent.agent_id` right after `send()`.
+- Honor `isRetryable` / `is_retryable` (and Python `retry_after`).
+- Keep `settingSources` / `setting_sources` empty unless you intend to load ambient Cursor settings.
+- Cloud CI: set `skipReviewerRequest` / `skip_reviewer_request` unless a human should be notified.
+- Prefer `Agent.prompt` for true one-shots.
+
+## MCP
+
+Inline servers on create/send. Per-send servers replace creation-time servers (no merge). Cloud supports HTTP and stdio; treat stdio `env` as secrets. Re-pass servers on resume.
+
+## Out of scope here
+
+Cloud Agents REST API (`/v1/agents/*`), `.cursor/hooks.json` management, and self-hosted pools. Use the SDK docs or those surfaces directly.
