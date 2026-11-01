@@ -1,6 +1,6 @@
 # Agentic University
 
-The controlled education, evaluation, and certification runtime for passported agents.
+The controlled education, evaluation, and certification system for passported agents.
 
 
 ## One canonical University source
@@ -15,7 +15,7 @@ The controlled education, evaluation, and certification runtime for passported a
 
 ## What is implemented
 
-The v2 runtime generates evidence-bearing learning releases instead of ungrounded topic lists.
+The v2 system generates evidence-bearing learning releases instead of ungrounded topic lists.
 
 1. Approved Source and Claim Registry
 2. Capability Blueprint
@@ -27,7 +27,7 @@ The v2 runtime generates evidence-bearing learning releases instead of ungrounde
 8. Thesis and Viva
 9. Faculty QA and Evidence Manifest
 
-Every release is tied to an eligible Passport context, approved source claims, observable learning outcomes, baseline evidence, hard governance gates, and owner-controlled permission review.
+Every release is tied to an eligible Passport context, approved source claims, observable learning outcomes, baseline evidence, hard management gates, and owner-controlled permission review.
 
 ## API
 
@@ -55,7 +55,7 @@ npm run ci
 
 CI runs strict TypeScript checking, generator tests, and a production build.
 
-## Runtime truth
+## System truth
 
 This repository contains a typed, testable material-generation core. Production persistence, real Passport signature middleware, authenticated source ingestion, and deployment infrastructure remain separate integration steps and must not be represented as complete.
 

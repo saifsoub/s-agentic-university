@@ -57,7 +57,7 @@ const researchAreas = [
     ),
   },
   {
-    title: 'Multi-Agent Orchestration',
+    title: 'Multi-Agent Task coordination',
     description:
       'Communication protocols, consensus algorithms, and emergent behavior in agent collectives.',
     icon: (

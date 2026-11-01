@@ -311,7 +311,7 @@ const pillars = [
     num: '03',
     title: 'Deployment',
     description:
-      'Take agents from laboratory to production. Navigate the full lifecycle of real-world deployment: safety validation, continuous monitoring, human-agent collaboration, and responsible governance at scale.',
+      'Take agents from laboratory to production. Navigate the full lifecycle of real-world deployment: safety validation, continuous monitoring, human-agent collaboration, and responsible management at scale.',
   },
 ];
 
@@ -390,7 +390,7 @@ const programs = [
   {
     title: 'Multi-Agent Systems',
     description:
-      'Orchestrate fleets of collaborating agents. Study consensus mechanisms, emergent behavior, distributed decision-making, and swarm intelligence paradigms.',
+      'Coordinate fleets of collaborating agents. Study consensus mechanisms, emergent behavior, distributed decision-making, and swarm intelligence paradigms.',
   },
   {
     title: 'Reasoning & Planning',
@@ -400,7 +400,7 @@ const programs = [
   {
     title: 'Tool Use & APIs',
     description:
-      'Equip agents with the ability to sense and act upon external systems. Design robust tool interfaces, API orchestration, and feedback-driven adaptation loops.',
+      'Equip agents with the ability to sense and act upon external systems. Design robust tool interfaces, API task coordination, and feedback-driven adaptation loops.',
   },
   {
     title: 'Memory & State',
@@ -410,7 +410,7 @@ const programs = [
   {
     title: 'Safety & Alignment',
     description:
-      'Ensure agents behave reliably and ethically. Study value alignment, interpretability, red-teaming, constitutional AI, and governance frameworks.',
+      'Ensure agents behave reliably and ethically. Study value alignment, interpretability, red-teaming, constitutional AI, and management frameworks.',
   },
 ];
 

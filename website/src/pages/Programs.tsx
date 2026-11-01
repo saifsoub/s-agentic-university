@@ -20,7 +20,7 @@ const disciplines = [
   {
     num: '02',
     title: 'Multi-Agent Systems',
-    desc: 'Orchestrate collectives of collaborating agents.',
+    desc: 'Coordinate collectives of collaborating agents.',
     topics: ['Agent Communication', 'Consensus Mechanisms', 'Emergent Behavior', 'Swarm Intelligence'],
   },
   {
